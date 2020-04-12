@@ -1,2 +1,1 @@
-# JavaLearn
-Java学习
+# JavaDemo
