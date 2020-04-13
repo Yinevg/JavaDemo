@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+  "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+  <properties resource="mybatisGenerator.properties"/>
+  <context id="context" targetRuntime="MyBatis3" defaultModelType="flat">
+    <commentGenerator>
+      <!--是否不生成注释-->
+      <property name="suppressAllComments" value="false"/>
+      <!--是否不生成日期-->
+      <property name="suppressDate" value="true"/>
+      <!--是否添加数据库内的注释-->
+      <property name="addRemarkComments" value="true"/>
+    </commentGenerator>
+
+    <!-- 数据库的相关配置 -->
+    <jdbcConnection driverClass="${jdbc.driverClass}"
+      connectionURL="${jdbc.connectionURL}"
+      userId="${jdbc.userId}"
+      password="${jdbc.password}">
+      <!--解决mysql驱动升级到8.0后不生成指定数据库代码的问题-->
+      <property name="nullCatalogMeansCurrent" value="true"/>
+    </jdbcConnection>
+
+    <javaTypeResolver>
+      <property name="forceBigDecimals" value="false"/>
+    </javaTypeResolver>
+
+    <!-- 实体类生成的位置 -->
+    <javaModelGenerator targetPackage="com.demo.model"
+      targetProject="src/main/java">
+    </javaModelGenerator>
+
+    <!-- *Mapper.xml 文件的位置 -->
+    <sqlMapGenerator targetPackage="mapper"
+      targetProject="src/main/resources">
+    </sqlMapGenerator>
+
+    <!-- Mapper 接口文件的位置 -->
+    <javaClientGenerator targetPackage="com.demo.dao"
+      targetProject="src/main/java"
+      type="XMLMAPPER">
+    </javaClientGenerator>
+
+    <!-- 相关表的配置 -->
+    <table tableName="mybatis_test" mapperName="MybatisTestDao"/>
+  </context>
+</generatorConfiguration>
