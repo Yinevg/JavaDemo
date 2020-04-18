@@ -14,6 +14,8 @@
         <module>hystrix</module>
         <module>native-config-server</module>
         <module>native-config-client</module>
+        <module>remote-config-server</module>
+        <module>remote-config-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

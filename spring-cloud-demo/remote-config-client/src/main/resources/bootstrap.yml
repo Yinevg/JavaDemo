@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: remote-config-client-dev # 与远程仓库的配置名对应
+      label: master
+      discovery:
+        enabled: true # 是否开启config服务发现支持
+        service-id: remote-config-server # 配置中心在注册中中心的名字
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:8761/eureka/ # 注册中心地址
