@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: native-config-client
+  profiles:
+    active: dev # 寻找 ${spring.application.name}-${spring.profiles.active}.yml 命名的配置文件
+  cloud:
+    config:
+      uri: http://localhost:8762/ # 配置查询地址
+      fail-fast: true # 客户端优先判断config server获取是否正常
