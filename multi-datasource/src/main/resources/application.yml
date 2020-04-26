@@ -1,0 +1,17 @@
+spring:
+  sharding:
+    dataSourceMap:
+      default:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/develop?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&autoReconnection=true&allowPublicKeyRetrieval=true
+        username: root
+        password: root
+      finace:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/finace?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true&autoReconnection=true&allowPublicKeyRetrieval=true
+        username: root
+        password: root
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
