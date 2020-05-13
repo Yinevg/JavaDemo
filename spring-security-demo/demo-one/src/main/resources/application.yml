@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  security:
+    user: # 配置默认的 InMemoryUserDetailsManager 的用户账号与密码。
+      name: user
+      password: 123
+      roles: ADMIN
+
